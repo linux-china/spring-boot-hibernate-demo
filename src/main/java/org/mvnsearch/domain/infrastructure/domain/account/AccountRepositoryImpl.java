@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import java.util.Optional;
 
 /**
  * account repository implementation
@@ -21,7 +22,7 @@ public class AccountRepositoryImpl implements AccountRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public Account findOne(Integer id) {
-        return hibernateTemplate.get(Account.class, id);
+    public Optional<Account> findOne(Integer id) {
+        return Optional.of(hibernateTemplate.get(Account.class, id));
     }
 }
