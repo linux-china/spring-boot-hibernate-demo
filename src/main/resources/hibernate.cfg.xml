@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- List of XML mapping files
+        <mapping resource="Proprietaire.hbm.xml"/>-->
+        <property name="hibernate.connection.zeroDateTimeBehavior">convertToNull</property>
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">
+            org.springframework.orm.hibernate5.SpringSessionContext
+        </property>
+        <mapping class="org.mvnsearch.domain.model.account.Account"/>
+    </session-factory>
+</hibernate-configuration>
